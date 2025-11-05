@@ -1,0 +1,3 @@
+//if std::u16string compile error, you need #include "tjsCommHead.h" outside
+
+see also sound/VorbisWaveDecoder.h header

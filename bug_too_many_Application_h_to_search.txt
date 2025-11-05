@@ -1,0 +1,5 @@
+#ifdef ANDROID
+#include "Application.h"
+#endif
+
+visual\opengl\DrawCycleTimer.h
