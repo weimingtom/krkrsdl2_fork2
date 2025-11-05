@@ -4,6 +4,9 @@ Code base (same as weimingtom/krkrsdl2-miyoo-a30):
 https://github.com/krkrsdl2/krkrsdl2/tree/638f8203c202163971ae1c483a2316ffcb9ef0ba    
 https://github.com/weimingtom/krkrsdl2-miyoo-a30  
 
+## TODO
+* Where is savedata folder of Android version ?
+
 ## How to build for Linux, Xubuntu 20.04 64bit, Xubuntu 25.04 64bit  
 * $ sudo apt update  
 * $ sudo apt install libsdl2-dev  
