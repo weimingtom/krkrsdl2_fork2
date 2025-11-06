@@ -29,4 +29,4 @@ https://github.com/weimingtom/krkrsdl2-miyoo-a30
 @cmd
 ```
 * Run ndk-build, or ndk-build -j8, or ndk-build NDK_DEBUG=1 V=1.  
-* Import, compile and run with Android ADT, see project_adt\ .project  
+* Import, compile and run with Android ADT, see android_adt\ .project  
