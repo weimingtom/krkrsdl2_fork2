@@ -28,6 +28,8 @@ https://github.com/weimingtom/krkrsdl2-miyoo-a30
 * 【SDL】sdl2/SDLApplication.cpp: if (::Application->StartApplication( _argc, _wargv ))
 * 【SDL】environ/sdl2/Application.cpp: bool tTVPApplication::StartApplication( int argc, tjs_char* argv[] ) {
 * 【SDL】environ/sdl2/Application.cpp: TVPInitScriptEngine();
+* 【SDL】sdl2/SDLApplication.cpp: ::Application->Run();
+* 【SDL】sdl2/SDLApplication.cpp: void tTVPApplication::Run() {
 * 【not used, Android】environ/android/Application.cpp: registerNativeMethods(env, "jp/kirikiri/krkrz/BaseMainActivity", methods, NUM_ARRAY_ELEMENTS(methods))
 * 【not used, Android】environ/android/Application.cpp: void tTVPApplication::nativeInitialize(JNIEnv *jenv, jobject obj) {
 * 【not used, Android】environ/android/Application.cpp: void tTVPApplication::initializeApplication() {}
