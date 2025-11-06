@@ -23,10 +23,14 @@ https://github.com/weimingtom/krkrsdl2-miyoo-a30
 * sdl2/SDLBitmapCompletion.cpp: void TVPSDLBitmapCompletion::NotifyBitmapCompleted(
 * sdl2/SDLBitmapCompletion.cpp: SDL_LockSurface(surface); surface->pixels
 * ======
-* Third, init script engine
-* environ/android/Application.cpp: registerNativeMethods(env, "jp/kirikiri/krkrz/BaseMainActivity", methods, NUM_ARRAY_ELEMENTS(methods))
-* environ/android/Application.cpp: void tTVPApplication::nativeInitialize(JNIEnv *jenv, jobject obj) {
-* environ/android/Application.cpp: void tTVPApplication::initializeApplication() {}
+* **Third**, init script engine
+* 【SDL】sdl2/SDLApplication.cpp: extern "C" int SDL_main(int argc, char **argv)
+* 【SDL】sdl2/SDLApplication.cpp: if (::Application->StartApplication( _argc, _wargv ))
+* 【SDL】environ/sdl2/Application.cpp: bool tTVPApplication::StartApplication( int argc, tjs_char* argv[] ) {
+* 【SDL】environ/sdl2/Application.cpp: TVPInitScriptEngine();
+* 【Android】environ/android/Application.cpp: registerNativeMethods(env, "jp/kirikiri/krkrz/BaseMainActivity", methods, NUM_ARRAY_ELEMENTS(methods))
+* 【Android】environ/android/Application.cpp: void tTVPApplication::nativeInitialize(JNIEnv *jenv, jobject obj) {
+* 【Android】environ/android/Application.cpp: void tTVPApplication::initializeApplication() {}
 * base/SysInitIntf.cpp: void TVPSystemInit(void){}
 * base/ScriptMgnIntf.cpp: void TVPInitScriptEngine() {}
 
