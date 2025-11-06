@@ -8,12 +8,13 @@ https://github.com/weimingtom/krkrsdl2-miyoo-a30
 * Where is savedata folder of Android version ?
 
 ## Key Code
-* **First**, get target surface from SDLApplication.cpp::GetTVPSDLBitmapCompletion
+* **First**, get target surface from SDLApplication.cpp::GetTVPSDLBitmapCompletion, and render to screen
 * visual/sdl2/BasicDrawDevice.h: TVPSDLBitmapCompletion* bitmap_completion;
 * sdl2/SDLApplication.cpp: bitmap_completion->surface = surface;
 * sdl2/SDLApplication.cpp: SDL_UpdateTexture(texture, &rect, surface->pixels, surface->pitch);
-* sdl2/SDLApplication.cpp: SDL_RenderPresent(renderer);
 * sdl2/SDLApplication.cpp: TVPSDLBitmapCompletion *TVPWindowWindow::GetTVPSDLBitmapCompletion()
+* 【Render to screen】 sdl2/SDLApplication.cpp: void TVPWindowWindow::TickBeat() {
+* 【Render to screen】 sdl2/SDLApplication.cpp: SDL_RenderPresent(renderer);
 * ======
 * **Second**, draw something to target surface from tTVPBasicDrawDevice::NotifyBitmapCompleted and TVPSDLBitmapCompletion::NotifyBitmapCompleted
 * visual/sdl2/BasicDrawDevice.cpp: void TJS_INTF_METHOD tTVPBasicDrawDevice::StartBitmapCompletion(iTVPLayerManager * manager)
@@ -31,7 +32,7 @@ https://github.com/weimingtom/krkrsdl2-miyoo-a30
 * 【SDL, run】sdl2/SDLApplication.cpp: ::Application->Run();
 * 【SDL, run】sdl2/SDLApplication.cpp: void tTVPApplication::Run() {
 * 【SDL, run】sdl2/SDLApplication.cpp: void TVPWindowWindow::TickBeat()
-* 【SDL, run】sdl2/SDLApplication.cpp: SDL_RenderCopy(renderer, texture, &rect, &rect);
+* 【SDL, run, Render to screen】sdl2/SDLApplication.cpp: SDL_RenderCopy(renderer, texture, &rect, &rect);
 * 【not used, Android】environ/android/Application.cpp: registerNativeMethods(env, "jp/kirikiri/krkrz/BaseMainActivity", methods, NUM_ARRAY_ELEMENTS(methods))
 * 【not used, Android】environ/android/Application.cpp: void tTVPApplication::nativeInitialize(JNIEnv *jenv, jobject obj) {
 * 【not used, Android】environ/android/Application.cpp: void tTVPApplication::initializeApplication() {}
