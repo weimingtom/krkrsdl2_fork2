@@ -24,12 +24,14 @@ https://github.com/weimingtom/krkrsdl2-miyoo-a30
 * sdl2/SDLBitmapCompletion.cpp: SDL_LockSurface(surface); surface->pixels
 * ======
 * **Third**, init script engine
-* 【SDL】sdl2/SDLApplication.cpp: extern "C" int SDL_main(int argc, char **argv)
-* 【SDL】sdl2/SDLApplication.cpp: if (::Application->StartApplication( _argc, _wargv ))
-* 【SDL】environ/sdl2/Application.cpp: bool tTVPApplication::StartApplication( int argc, tjs_char* argv[] ) {
-* 【SDL】environ/sdl2/Application.cpp: TVPInitScriptEngine();
-* 【SDL】sdl2/SDLApplication.cpp: ::Application->Run();
-* 【SDL】sdl2/SDLApplication.cpp: void tTVPApplication::Run() {
+* 【SDL, start】sdl2/SDLApplication.cpp: extern "C" int SDL_main(int argc, char **argv)
+* 【SDL, start】sdl2/SDLApplication.cpp: if (::Application->StartApplication( _argc, _wargv ))
+* 【SDL, start】environ/sdl2/Application.cpp: bool tTVPApplication::StartApplication( int argc, tjs_char* argv[] ) {
+* 【SDL, start】environ/sdl2/Application.cpp: TVPInitScriptEngine();
+* 【SDL, run】sdl2/SDLApplication.cpp: ::Application->Run();
+* 【SDL, run】sdl2/SDLApplication.cpp: void tTVPApplication::Run() {
+* 【SDL, run】sdl2/SDLApplication.cpp: void TVPWindowWindow::TickBeat()
+* 【SDL, run】sdl2/SDLApplication.cpp: SDL_RenderCopy(renderer, texture, &rect, &rect);
 * 【not used, Android】environ/android/Application.cpp: registerNativeMethods(env, "jp/kirikiri/krkrz/BaseMainActivity", methods, NUM_ARRAY_ELEMENTS(methods))
 * 【not used, Android】environ/android/Application.cpp: void tTVPApplication::nativeInitialize(JNIEnv *jenv, jobject obj) {
 * 【not used, Android】environ/android/Application.cpp: void tTVPApplication::initializeApplication() {}
