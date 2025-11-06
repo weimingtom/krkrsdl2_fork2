@@ -22,6 +22,13 @@ https://github.com/weimingtom/krkrsdl2-miyoo-a30
 * visual/sdl2/BasicDrawDevice.cpp: bitmap_completion->NotifyBitmapCompleted(manager, x, y, bits, bmpinfo, cliprect, type, opacity);
 * sdl2/SDLBitmapCompletion.cpp: void TVPSDLBitmapCompletion::NotifyBitmapCompleted(
 * sdl2/SDLBitmapCompletion.cpp: SDL_LockSurface(surface); surface->pixels
+* ======
+* Third, init script engine
+* environ/android/Application.cpp: registerNativeMethods(env, "jp/kirikiri/krkrz/BaseMainActivity", methods, NUM_ARRAY_ELEMENTS(methods))
+* environ/android/Application.cpp: void tTVPApplication::nativeInitialize(JNIEnv *jenv, jobject obj) {
+* environ/android/Application.cpp: void tTVPApplication::initializeApplication() {}
+* base/SysInitIntf.cpp: void TVPSystemInit(void){}
+* base/ScriptMgnIntf.cpp: void TVPInitScriptEngine() {}
 
 ## How to build for Linux, Xubuntu 20.04 64bit, Xubuntu 25.04 64bit  
 * $ sudo apt update  
