@@ -7,6 +7,22 @@ https://github.com/weimingtom/krkrsdl2-miyoo-a30
 ## TODO
 * Where is savedata folder of Android version ?
 
+## Key Code
+* **First**, get target surface from SDLApplication.cpp::GetTVPSDLBitmapCompletion
+* visual/sdl2/BasicDrawDevice.h: TVPSDLBitmapCompletion* bitmap_completion;
+* sdl2/SDLApplication.cpp: bitmap_completion->surface = surface;
+* sdl2/SDLApplication.cpp: SDL_UpdateTexture(texture, &rect, surface->pixels, surface->pitch);
+* sdl2/SDLApplication.cpp: SDL_RenderPresent(renderer);
+* sdl2/SDLApplication.cpp: TVPSDLBitmapCompletion *TVPWindowWindow::GetTVPSDLBitmapCompletion()
+* ======
+* **Second**, draw something to target surface from tTVPBasicDrawDevice::NotifyBitmapCompleted and TVPSDLBitmapCompletion::NotifyBitmapCompleted
+* visual/sdl2/BasicDrawDevice.cpp: void TJS_INTF_METHOD tTVPBasicDrawDevice::StartBitmapCompletion(iTVPLayerManager * manager)
+* visual/sdl2/BasicDrawDevice.cpp: bitmap_completion = form->GetTVPSDLBitmapCompletion();
+* visual/sdl2/BasicDrawDevice.cpp: void TJS_INTF_METHOD tTVPBasicDrawDevice::NotifyBitmapCompleted(iTVPLayerManager * manager,
+* visual/sdl2/BasicDrawDevice.cpp: bitmap_completion->NotifyBitmapCompleted(manager, x, y, bits, bmpinfo, cliprect, type, opacity);
+* sdl2/SDLBitmapCompletion.cpp: void TVPSDLBitmapCompletion::NotifyBitmapCompleted(
+* sdl2/SDLBitmapCompletion.cpp: SDL_LockSurface(surface); surface->pixels
+
 ## How to build for Linux, Xubuntu 20.04 64bit, Xubuntu 25.04 64bit  
 * $ sudo apt update  
 * $ sudo apt install libsdl2-dev  
